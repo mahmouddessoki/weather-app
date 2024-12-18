@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imgs/weather02-1024.webp" type="image/x-icon">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+
+
+    <!-- start of nav -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container p-4">
+            <a class="navbar-brand d-flex column-gap-3 align-items-center" href="./index.html">
+                <img src="imgs/logo@2x.png" alt="logo">
+                <h1 class="h5 d-flex flex-column row-gap-2">
+                    <span class="text-white fw-bold">Weather</span>
+                    <span>tagline goes here</span>
+
+                </h1>
+
+            </a>
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars fa-lg text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav row-gap-2 ms-auto mb-2 mb-lg-0 mt-2 mt-lg-0 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link  px-4" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="./news.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#">live camera</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#">photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active px-4" href="#">contact</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- end of nav -->
+
+    <header id="contact">
+        <div class="container py-5">
+
+            <div class="path p-3 mb-5 d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item "><a href="./index.html" class="text-white-50">Home</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+
+
+            <div class="row justify-content-between gy-3">
+                <div class="col-lg-4">
+                    <div class="contact-info rounded-2 shadow ">
+                        <div class="contact-map text-center d-flex flex-column">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d55675.93912990882!2d31.103905799999996!3d29.2897797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1734391885311!5m2!1sar!2seg"
+                                height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="contact-text p-4 w-100">
+                            <div class="location d-flex column-gap-2">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>
+                                    Company Name INC. <br>
+                                    2803 Avenue Street, Los Angeles
+                                </p>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-sm-column justify-content-between">
+                                <div class="phone d-flex column-gap-2">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <p>+1 800 314 235</p>
+                                </div>
+                                <div class="mail d-flex column-gap-2">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <p>
+                                        contact@companyname.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <h2 class="text-white fw-normal">
+                            Contact us
+
+                        </h2>
+                        <p class="text-white-50 mb-4 ">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur inventore
+                            ducimus, facilis, numquam id
+                            soluta omnis eius recusandae nesciunt vero repellat harum cum. Nisi facilis odit hic, ipsum
+                            sed!
+
+                        </p>
+
+                        <form action="">
+                            <div class="row gy-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <div class="row gy-3 my-4">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="company Number">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="url" class="form-control" placeholder="website">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+
+                            <button id="contactBtn" class="btn btn-primary px-5 py-3 text-capitalize float-end mt-3">contact us</button>
+                        </form>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </header>
+
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row gy-3 align-items-center justify-content-lg-between justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="subscribe">
+                        <form action="">
+                            <div class="p-2 position-relative d-flex align-items-center">
+                                <input type="text" placeholder="Enter your email to subscribe..." class="form-control"
+                                    id="subscribeInp">
+                                <label for="subscribeInp" class="position-absolute  end-0">
+                                    <button class="btn btn-primary px-lg-5 px-3 py-2 text-capitalize me-3"
+                                        id="subscrib-btn">subscribe</button>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="col-lg-6 ">
+                    <div class="social-links text-lg-end text-center me-2">
+                        <a href="#" class=" me-4">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="#" class=" me-4">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class=" me-4">
+                            <i class="fa-brands   fa-google-plus"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands   fa-pinterest"></i>
+                        </a>
+    
+    
+                    </div>
+                </div>
+            </div>
+    
+            <p class="mt-4 copyright text-center">
+                Copyright 2014 Company name. Designed by Themezy. All rights reserved
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+</body>
+
+</html>

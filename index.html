@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imgs/weather02-1024.webp" type="image/x-icon">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+
+
+    <!-- start of nav -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container p-4">
+            <a class="navbar-brand d-flex column-gap-3 align-items-center" href="./index.html">
+                <img src="imgs/logo@2x.png" alt="logo">
+                <h1 class="h5 d-flex flex-column row-gap-2">
+                    <span class="text-white fw-bold">Weather</span>
+                    <span>tagline goes here</span>
+
+                </h1>
+
+            </a>
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars fa-lg text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav row-gap-2 ms-auto mb-2 mb-lg-0 mt-2 mt-lg-0 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link active px-4" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="./news.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#">live camera</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#">photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="./contact.html">contact</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- end of nav -->
+
+    <header id="home">
+        <div class="container py-5">
+            <form action="" >
+
+                <div class="p-2 position-relative d-flex align-items-center">
+                    <input type="text" placeholder="find your location.." class="form-control" id="searchInput">
+                    <label for="searchInput" class="position-absolute  end-0">
+                        <button class="btn btn-primary px-5 py-2 me-3" id="find-btn">Find</button>
+                    </label>
+                </div>
+            </form>
+
+            <div class="row mt-5 gy-3" id="forecast-data">
+                
+                <span class="loader mx-auto"></span>
+                <span id="loading-title" class="text-white fs-4 text-capitalize text-center">try loading Weather forecast data</span>
+
+                
+            </div>
+        </div>
+    </header>
+
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row gy-3 align-items-center justify-content-lg-between justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="subscribe">
+                        <form action="">
+                            <div class="p-2 position-relative d-flex align-items-center">
+                                <input type="text" placeholder="Enter your email to subscribe..." class="form-control"
+                                    id="subscribeInp">
+                                <label for="subscribeInp" class="position-absolute  end-0">
+                                    <button class="btn btn-primary px-lg-5 px-3 py-2 text-capitalize me-3"
+                                        id="subscrib-btn">subscribe</button>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 ">
+                    <div class="social-links text-lg-end text-center me-2">
+                        <a href="#" class=" me-4">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="#" class=" me-4">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class=" me-4">
+                            <i class="fa-brands   fa-google-plus"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands   fa-pinterest"></i>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-4 copyright text-center">
+                Copyright 2014 Company name. Designed by Themezy. All rights reserved
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
