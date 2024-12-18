@@ -17,11 +17,11 @@
     <!-- start of nav -->
     <nav class="navbar navbar-expand-lg">
         <div class="container p-4">
-            <a class="navbar-brand d-flex column-gap-3 align-items-center" href="./index.html">
+            <a class="navbar-brand d-flex column-gap-2 align-items-center" href="./index.html">
                 <img src="imgs/logo@2x.png" alt="logo">
-                <h1 class="h5 d-flex flex-column row-gap-2">
-                    <span class="text-white fw-bold">Weather</span>
-                    <span>tagline goes here</span>
+                <h1 class="h5 d-flex flex-column mb-0 row-gap-2">
+                    <span class="text-white nav-brand-text fw-bold">Weather</span>
+                    <span class="nav-brand-text">tagline goes here</span>
 
                 </h1>
 
@@ -63,7 +63,7 @@
             <form action="" >
 
                 <div class="p-2 position-relative d-flex align-items-center">
-                    <input type="text" placeholder="find your location.." class="form-control" id="searchInput">
+                    <input type="text" placeholder="find..." class="form-control" id="searchInput">
                     <label for="searchInput" class="position-absolute  end-0">
                         <button class="btn btn-primary px-5 py-2 me-3" id="find-btn">Find</button>
                     </label>
@@ -73,7 +73,7 @@
             <div class="row mt-5 gy-3" id="forecast-data">
                 
                 <span class="loader mx-auto"></span>
-                <span id="loading-title" class="text-white fs-4 text-capitalize text-center">try loading Weather forecast data</span>
+                <span id="loading-title" class="text-white fs-4 text-capitalize text-center">Loading....</span>
 
                 
             </div>
@@ -88,7 +88,7 @@
                     <div class="subscribe">
                         <form action="">
                             <div class="p-2 position-relative d-flex align-items-center">
-                                <input type="text" placeholder="Enter your email to subscribe..." class="form-control"
+                                <input type="text" placeholder="Enter your email..." class="form-control"
                                     id="subscribeInp">
                                 <label for="subscribeInp" class="position-absolute  end-0">
                                     <button class="btn btn-primary px-lg-5 px-3 py-2 text-capitalize me-3"

@@ -48,7 +48,7 @@ nav.navbar .active {
 
 
 header#home {
-   background: url("../imgs/world-map-background-news-studio-background-for-news-report-and-breaking-news-on-world-live-report-video.jpg");
+   background: linear-gradient(to bottom , rgba(0,0,0,0.3) 0 50% , var(--main-bg-color) 50% 100%) ,  url("../imgs/world-map-background-news-studio-background-for-news-report-and-breaking-news-on-world-live-report-video.jpg");
     background-size: 100% 100%;
     min-height: 100vh;
     /* background-position: top; */
@@ -61,6 +61,10 @@ header#news {
 
 header#contact {
     background-color: var(--main-bg-color);
+}
+
+#hsd i {
+    color: #bfc1ac !important;
 }
 
 
@@ -237,6 +241,24 @@ footer , .path , .contact-info {
     .pagination a {
         padding: 12px !important;
         margin: 0 !important;
+    }
+}
+@media screen and (max-width: 430px) { 
+    .pagination a {
+        padding: 9px !important;
+        margin: 0 !important;
+    }
+     .card-title {
+        font-size: 14px !important;
+     }
+    .card-text {
+        font-size: 12px !important;
+    }
+    .navbar-brand img {
+        width: 50px !important;
+    }
+    .nav-brand-text {
+        display: none !important;
     }
 }
 

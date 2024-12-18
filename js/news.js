@@ -2,7 +2,7 @@
 let newsData = document.getElementById('news-data')
 let paginationCont = document.getElementById("pagination")
 let paginationLink = document.getElementById("pagination-link")
-let numberOfItemsPerPage = 9
+let numberOfItemsPerPage = 4
 let searchInput = document.getElementById("searchInput")
 let findBtn = document.getElementById('find-btn')
 let queryString = window.location.search
@@ -12,26 +12,21 @@ getWeatherNews('all')
 
 
 async function getWeatherNews(searchValue) {
-    let response = await fetch(`https://newsapi.org/v2/everything?q=weather&apiKey=f55e51c58c5644f18fd0d2a2fa8762f4`)
+    let response = await fetch(`https://gnews.io/api/v4/search?q=weather&apikey=73358aa89caccb6e105bb83d26f96508`)
     let data = await response.json()
   
+    
+    
 
-    let filteredNews = data.articles.filter(function (article) {
-        return (article.source.name !== '[Removed]')
-            && (article.title !== '[Removed]')
-            && (article.description !== '[Removed]')
-            && (article.url !== 'https://removed.com')
-            && (article.urlToImage != null)
-    })
-
-
-    let numOfPages = Math.ceil((filteredNews.length - 1) / numberOfItemsPerPage)
+    console.log(data);
+    
+    let numOfPages = Math.ceil((data.articles.length - 1) / numberOfItemsPerPage)
 
     if (searchValue) {
-        displayNews(filteredNews, currentPage, searchValue)
+        displayNews(data.articles, currentPage, searchValue)
 
     } else {
-        displayNews(filteredNews, currentPage, 'all')
+        displayNews(data.articles, currentPage, 'all')
     }
     displayPagination(numOfPages)
 
@@ -45,10 +40,6 @@ function displayNews(news, pageNumber, searchValue) {
     if (searchValue == 'all') {
         searchValue = ' '
     }
-
-    console.log(news);
-    
-
     let cartoona = ``;
     let loopStart = (pageNumber - 1) * numberOfItemsPerPage
     let loopEnd = loopStart + (numberOfItemsPerPage - 1)
@@ -62,13 +53,11 @@ function displayNews(news, pageNumber, searchValue) {
         if (news[i].title.toLowerCase().includes(searchValue.toLowerCase())
             || news[i].description.toLowerCase().includes(searchValue.toLowerCase())) {
             cartoona += ` 
-        
-        
         <div class="col-lg-4 col-md-6 col-12 ">
                     <div class="news-item h-100 overflow-hidden">
                         <div class="card border-0 shadow-lg h-100">
                         <a target="_blank" href="${news[i]?.url}" class="float-end">
-                        <img src="${news[i]?.urlToImage}" class="card-img-top w-100" alt="...">
+                        <img src="${news[i]?.image}" class="card-img-top w-100" alt="...">
                         </a>
                             <div class="card-body   position-relative">
                                 <h5 class="card-title h6">${news[i]?.title}</h5>

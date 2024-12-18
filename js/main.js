@@ -68,11 +68,20 @@ function displayForecast(locationName, current, forecast) {
                             <span id="weather-text" class="d-block ${i == 0 ? "text-start" : "text-center"}">
                                 ${i == 0 ? current.condition.text : forecast[i].day.condition.text}
                             </span>
-                            <!-- <div>
-                                <p>
-
-                                </p>
-                            </div> -->
+                             <div id="hsd"  class="${i == 0? "d-flex text-white column-gap-3 mt-2" : "d-none"}" id="wind">
+                                <div id="humidity " class="d-flex column-gap-2 align-items-center">
+                                    <i class="fa-solid fa-umbrella"></i>
+                                    <span>${current.humidity}%</span>
+                                </div>
+                                <div id="wind-speed " class="d-flex column-gap-2 align-items-center">
+                                <i class="fa-solid fa-gauge"></i>
+                                <span>${current.wind_kph} km/h</span>
+                                </div>
+                                <div id="wind-dir " class="d-flex column-gap-2 align-items-center">
+                                <i class="fa-brands fa-nfc-directional"></i>
+                                <span>${current.wind_dir}</span>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -96,7 +105,7 @@ function displayForecast(locationName, current, forecast) {
 
 function search() {
     value = searchInput.value.toLowerCase()
-    if (value) {
+    if (value.length > 2) {
         weatherForecast(value)
     } else {
         weatherForecast(`${lat},${lon}`)
@@ -115,3 +124,14 @@ searchForm?.addEventListener("submit", function (e) {
 })
 
 
+
+
+for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click',function(e){
+        navLinks.forEach(function(link){
+            link.classList.remove('active')
+        })
+        e.target.classList.add('active')
+    })
+    
+}
