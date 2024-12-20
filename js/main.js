@@ -40,10 +40,10 @@ async function weatherForecast(q) {
 
 
     } catch (e) {
-        weatherLoader.classList.replace('d-block', 'd-none')
+        // weatherLoader.classList.replace('d-block', 'd-none')
 
-        fetchErr.classList.remove('d-none')
-        fetchErr.innerHTML = e.message
+        // fetchErr.classList.remove('d-none')
+        // fetchErr.innerHTML = e.message
 
     }
 }
