@@ -47,7 +47,7 @@ nav.navbar .active {
 }
 
 
-header#home {
+header#home,#news {
    background: linear-gradient(to bottom , rgba(0,0,0,0.3) 0 50% , var(--main-bg-color) 50% 100%) ,  url("../imgs/world-map-background-news-studio-background-for-news-report-and-breaking-news-on-world-live-report-video.jpg");
     background-size: 100% 100%;
     min-height: 100vh;

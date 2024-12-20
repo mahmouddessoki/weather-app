@@ -5,7 +5,9 @@ let searchForm = document.forms[0]
 let navLinks = document.querySelectorAll(".nav-link")
 let lat, lon;
 
-navigator.geolocation.getCurrentPosition(getPosition)
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getPosition)
+}
 function getPosition(position) {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
@@ -16,14 +18,34 @@ function getPosition(position) {
 
 
 async function weatherForecast(q) {
-    let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=3d99310fda93461c888231221241512&q=${q}&days=3`)
-    let data = await response.json()
+    weatherLoader.classList.replace('d-none', 'd-block')
+    forecastData.classList.add('d-none')
+    
+
+    try {
+
+        let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=3d99310fda93461c888231221241512&q=${q}&days=3`)
+            .catch(function (e) {
+                throw new Error(e)
+            })
+        let data = await response.json()
+        console.log(data);
+         
+        weatherLoader.classList.replace('d-block', 'd-none')
+        
+
+        forecastData.classList.remove("d-none")
+        displayForecast(data.location.name, data.current, data.forecast.forecastday)
 
 
-    displayForecast(data.location.name, data.current, data.forecast.forecastday)
-    // displayForecastTest(data.location.name, data.current, data.forecast.forecastday)
 
+    } catch (e) {
+        weatherLoader.classList.replace('d-block', 'd-none')
 
+        fetchErr.classList.remove('d-none')
+        fetchErr.innerHTML = e.message
+
+    }
 }
 
 weatherForecast('cairo')
@@ -68,7 +90,7 @@ function displayForecast(locationName, current, forecast) {
                             <span id="weather-text" class="d-block ${i == 0 ? "text-start" : "text-center"}">
                                 ${i == 0 ? current.condition.text : forecast[i].day.condition.text}
                             </span>
-                             <div id="hsd"  class="${i == 0? "d-flex text-white column-gap-3 mt-2" : "d-none"}" id="wind">
+                             <div id="hsd"  class="${i == 0 ? "d-flex text-white column-gap-3 mt-2" : "d-none"}" id="wind">
                                 <div id="humidity " class="d-flex column-gap-2 align-items-center">
                                     <i class="fa-solid fa-umbrella"></i>
                                     <span>${current.humidity}%</span>
@@ -127,11 +149,11 @@ searchForm?.addEventListener("submit", function (e) {
 
 
 for (let i = 0; i < navLinks.length; i++) {
-    navLinks[i].addEventListener('click',function(e){
-        navLinks.forEach(function(link){
+    navLinks[i].addEventListener('click', function (e) {
+        navLinks.forEach(function (link) {
             link.classList.remove('active')
         })
         e.target.classList.add('active')
     })
-    
+
 }

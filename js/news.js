@@ -8,27 +8,43 @@ let findBtn = document.getElementById('find-btn')
 let queryString = window.location.search
 let urlParams = new URLSearchParams(queryString)
 let currentPage = Number(urlParams.get("page")) || 1
+let navLinks = document.querySelectorAll(".nav-link")
+
 getWeatherNews('all')
 
 
 async function getWeatherNews(searchValue) {
-    let response = await fetch(`https://gnews.io/api/v4/search?q=weather&apikey=73358aa89caccb6e105bb83d26f96508`)
-    let data = await response.json()
-  
-    
-    
+    newsLoader.classList.replace('d-none', 'd-block')
+    newsData.classList.add('d-none')
 
-    console.log(data);
-    
-    let numOfPages = Math.ceil((data.articles.length - 1) / numberOfItemsPerPage)
+    try {
+        let response = await fetch(`https://gnews.io/api/v4/search?q=weather&apikey=73358aa89caccb6e105bb83d26f96508`).catch(function(){
+            throw new Error()
+        })
+        let data = await response.json()
+        newsLoader.classList.replace('d-block', 'd-none')
+        if (data.articles.length == 0) {
+            notFound.classList.add('d-block')
+        } else {
+            notFound.classList.remove('d-block')
+            newsData.classList.remove('d-none')
+            let numOfPages = Math.ceil((data.articles.length - 1) / numberOfItemsPerPage)
 
-    if (searchValue) {
-        displayNews(data.articles, currentPage, searchValue)
+            if (searchValue) {
+                displayNews(data.articles, currentPage, searchValue)
 
-    } else {
-        displayNews(data.articles, currentPage, 'all')
+            } else {
+                displayNews(data.articles, currentPage, 'all')
+            }
+            displayPagination(numOfPages)
+        }
+    } catch(e){
     }
-    displayPagination(numOfPages)
+    
+    
+   
+
+
 
 
 
@@ -38,7 +54,7 @@ async function getWeatherNews(searchValue) {
 
 function displayNews(news, pageNumber, searchValue) {
     if (searchValue == 'all') {
-        searchValue = ' '
+        searchValue = ''
     }
     let cartoona = ``;
     let loopStart = (pageNumber - 1) * numberOfItemsPerPage
@@ -120,3 +136,13 @@ findBtn.addEventListener('click', function () {
 document.forms[0].addEventListener('submit', function (e) {
     e.preventDefault()
 })
+
+for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', function (e) {
+        navLinks.forEach(function (link) {
+            link.classList.remove('active')
+        })
+        e.target.classList.add('active')
+    })
+
+}
